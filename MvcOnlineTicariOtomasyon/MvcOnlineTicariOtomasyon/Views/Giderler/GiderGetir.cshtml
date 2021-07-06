@@ -1,0 +1,33 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Gider
+
+@{
+    ViewBag.Title = "GiderGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Gider Güncelleme Sayfası</h2>
+<br />
+
+@using (Html.BeginForm("GıderGuncelle", "Giderler", FormMethod.Post))
+
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.Giderid)
+        @Html.LabelFor(x => x.Aciklama)
+        @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+        @*@Html.HiddenFor(x => x.Giderid)*@
+        <br />
+        @Html.LabelFor(x => x.Tarih)
+        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Tutar)
+        @Html.TextBoxFor(x => x.Tutar, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Aylar)
+        @Html.TextBoxFor(x => x.Aylar, new { @class = "form-control" })
+
+    </div>
+
+    <button class="btn btn-default" style="background-color:springgreen"> Güncelle </button>
+}
